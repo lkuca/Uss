@@ -44,6 +44,9 @@ namespace Uss
             //pLIST.Add(p1);
             //pLIST.Add(p2);
 
+            HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
+            line.Drow();
+
             Console.ReadLine();
         }
 
