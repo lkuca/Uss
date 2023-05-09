@@ -10,11 +10,42 @@ namespace Uss
     {
         public static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            Draw(p1.x, p1.y, p1.sym);
 
-            Point p2 = new Point(4, 5, '#');
-            Draw(p2.x, p2.y, p2.sym);
+
+
+
+
+            Console.SetWindowSize(80, 25);
+
+
+            HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
+            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine leftline = new VerticalLine(0, 24, 0, '+');
+            VerticalLine rightline = new VerticalLine(0, 24, 78, '+');
+            upLine.Drow();
+            downLine.Drow();
+            leftline.Drow();
+            rightline.Drow();
+
+
+
+            Point p = new Point(4, 5, '*');
+            p.draw();
+
+
+
+
+
+
+
+
+
+
+            //Point p1 = new Point(1, 3, '*');
+            //Draw(p1.x, p1.y, p1.sym);
+
+            //Point p2 = new Point(4, 5, '#');
+            //Draw(p2.x, p2.y, p2.sym);
 
 
             //int x1 = 1;
@@ -44,16 +75,16 @@ namespace Uss
             //pLIST.Add(p1);
             //pLIST.Add(p2);
 
-            HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
-            line.Drow();
+            //HorizontalLine line = new HorizontalLine(5, 10, 8, '+');
+            //line.Drow();
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
-        static void Draw(int x, int y, char sym)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(sym);
-        }
+        //static void Draw(int x, int y, char sym)
+        //{
+        //    Console.SetCursorPosition(x, y);
+        //    Console.Write(sym);
+        //}
     }
 }

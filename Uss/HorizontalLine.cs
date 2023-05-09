@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Uss
 {
-     class HorizontalLine
+     class HorizontalLine : Figure
     {
-        List<Point> pLIST;
+        
 
         public HorizontalLine(int xLeft, int xReight, int y, char sym)
         {
@@ -28,12 +28,6 @@ namespace Uss
             //pLIST.Add(p3);
         }
           
-        public void Drow()
-        {
-            foreach(Point p in pLIST)
-            {
-                p.draw();
-            }
-        }
+        
     }
 }
