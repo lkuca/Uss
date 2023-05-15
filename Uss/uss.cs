@@ -17,7 +17,7 @@ namespace Uss
 
             Console.SetWindowSize(80, 25);
 
-
+            
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
             HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
             VerticalLine leftline = new VerticalLine(0, 24, 0, '+');
@@ -27,13 +27,14 @@ namespace Uss
             leftline.Drow();
             rightline.Drow();
 
-
-
             Point p = new Point(4, 5, '*');
-            p.draw();
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Drow();
+            
 
-
-
+            //emploee e = new emploee();
+            //e.age = 42;
+            //e.pay = 30000;
 
 
 

@@ -10,8 +10,6 @@ namespace Uss
     {
         protected List<Point> pLIST;
 
-        List<Point> pLIST;
-
         public void Drow()
         {
             foreach ( Point p in pLIST)
