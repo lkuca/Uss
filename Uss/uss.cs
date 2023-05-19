@@ -30,8 +30,23 @@ namespace Uss
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
-            
 
+            while (true)
+            {
+                if(Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.LeftArrow)
+                        snake.direction = Direction.LEFT;
+                    else if (key.Key == ConsoleKey.RightArrow)
+                        snake.direction = Direction.RIGHT;
+                    else if (key.Key== ConsoleKey.DownArrow)
+                        snake.direction = Direction.DOWN;
+
+                
+            }
+            
+            
             //emploee e = new emploee();
             //e.age = 42;
             //e.pay = 30000;
@@ -80,8 +95,9 @@ namespace Uss
             //line.Drow();
 
             //Console.ReadLine();
+            Console.ReadLine();
         }
-
+        
         //static void Draw(int x, int y, char sym)
         //{
         //    Console.SetCursorPosition(x, y);

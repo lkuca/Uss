@@ -15,6 +15,7 @@ namespace Uss
 
         public Point()
         {
+
         }
 
         public Point(int x, int y, char sym)
@@ -55,9 +56,18 @@ namespace Uss
             Console.Write(sym);
         }
 
+
+        public void Clear()
+        {
+            sym = ' ';
+            draw();
+        }
+
         public override string ToString()
         {
             return x + " , "+ y + " + " + sym;
         }
+
+        
     }
 }
