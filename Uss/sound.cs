@@ -14,7 +14,7 @@ namespace Uss
             await Task.Run(() =>
             {
                 using (AudioFileReader audioFileReader = new AudioFileReader(Path))
-                using (IWavePlayer waveOutDevice = new WaveOutEvent { DesiredLatency = 200, Volume=50})
+                using (IWavePlayer waveOutDevice = new WaveOutEvent { DesiredLatency = 200})
                 {
                     waveOutDevice.Init(audioFileReader);
                     waveOutDevice.Play();
