@@ -3,32 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks.Sources;
 using Uss;
+
 
 namespace Snake
 {
 	class Program
 	{
+		
 		static void Main( string[] args )
 		{
+			int scor = 0;
 			Console.SetWindowSize( 90, 25 );
 
 			Walls walls = new Walls( 80, 25 );
 			walls.Draw();
 
 			// Отрисовка точек			
-			Point p = new Point( 4, 5, "*" );
+			Point p = new Point( 4, 5, '*' );
 			Snake snake = new Snake( p, 4, Direction.RIGHT );
 			snake.Draw();
 
-			FoodCreator foodCreator = new FoodCreator( 80, 25, "$" );
+			FoodCreator foodCreator = new FoodCreator( 80, 25, '$' );
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
 			sound mäng = new sound();
 			ConsoleKeyInfo nupp = new ConsoleKeyInfo();
 			_ = mäng.Tagaplaanis_Mangida("../../../back.wav");
-			Console.WriteLine(score);
+			//Console.WriteLine(score);
 
 
 
@@ -44,6 +48,10 @@ namespace Snake
 					_ = mäng.Natuke_Mangida("../../../eat.wav");
 					food = foodCreator.CreateFood();
 					food.Draw();
+					scor++;
+					WriteText($"score: {scor}", 82, 8 ) ;
+
+					
 				}
 				else
 				{
@@ -83,12 +91,6 @@ namespace Snake
 			Console.SetCursorPosition( xOffset, yOffset );
 			Console.WriteLine( text );
 		}
-		static void score(int mapWidth, int mapHeight)
-		{
-
-			Point s = new Point(90, 80,"score: ");
-			
-
-		}
+		
 	}
 }

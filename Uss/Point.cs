@@ -10,13 +10,13 @@ namespace Snake
 	{
 		public int x;
 		public int y;
-		public string sym;
+		public char sym;
 
 		public Point()
 		{
 		}
 
-		public Point(int x, int y, string sym)
+		public Point(int x, int y, char sym)
 		{
 			this.x = x;
 			this.y = y;
@@ -63,13 +63,13 @@ namespace Snake
 
 		public void Clear()
 		{
-			sym = " ";
+			sym = ' ';
 			Draw();
 		}
 
 		public override string ToString()
 		{
-			return x + ", " + y + ", " + sym;
+			return x + "," + y + "," + sym;
 		}
 	}
 }
