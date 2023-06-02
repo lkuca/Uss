@@ -14,6 +14,7 @@ namespace Snake
 		
 		static void Main( string[] args )
 		{
+			int speed = 100;
 			int scor = 0;
 			Console.SetWindowSize( 90, 25 );
 
@@ -29,7 +30,12 @@ namespace Snake
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
-			sound mäng = new sound();
+			FoodCreator boostcreator = new FoodCreator(80, 25, '฿');
+            Point boost = boostcreator.BoostCreater();
+			boost.Draw();
+
+
+            sound mäng = new sound();
 			ConsoleKeyInfo nupp = new ConsoleKeyInfo();
 			_ = mäng.Tagaplaanis_Mangida("../../../back.wav");
 			//Console.WriteLine(score);
@@ -49,16 +55,23 @@ namespace Snake
 					food = foodCreator.CreateFood();
 					food.Draw();
 					scor++;
-					WriteText($"score: {scor}", 82, 8 ) ;
+					WriteText($"score: {scor}", 81, 8 ) ;
 
 					
 				}
+				else if (snake.Eat2(boost) )
+				{
+                    _ = mäng.Natuke_Mangida("../../../eat.wav");
+					speed = 60;
+					boost = boostcreator.BoostCreater();
+					boost.Draw();
+                }
 				else
 				{
 					snake.Move();
 				}
 
-				Thread.Sleep( 100 );
+				Thread.Sleep( speed );
 				if ( Console.KeyAvailable )
 				{
 					ConsoleKeyInfo key = Console.ReadKey();
