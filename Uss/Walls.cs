@@ -6,15 +6,25 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Walls
+	public class Walls
 	{
 		List<Figure> wallList;
 
-		public Walls( int mapWidth, int mapHeight )
+		public Walls( int mapWidth, int mapHeight,int scor )
 		{
 			wallList = new List<Figure>();
+			//Console.ForegroundColor = ConsoleColor.White;
+			//if (scor == 5)
 
-			// Отрисовка рамочки
+			//{
+			//	wallList = new List<Figure>();
+
+			//	ConsoleColor consoleColor = ConsoleColor.Green;
+			//	Console.ForegroundColor = consoleColor;
+			//}// Отрисовка рамочки
+			//else
+			//	Console.ForegroundColor = ConsoleColor.White;
+
 			HorizontalLine upLine = new HorizontalLine( 0, mapWidth - 2, 0, '+' );
 			HorizontalLine downLine = new HorizontalLine( 0, mapWidth - 2, mapHeight - 1, '+');
 			VerticalLine leftLine = new VerticalLine( 0, mapHeight - 1, 0, '+');

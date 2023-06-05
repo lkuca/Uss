@@ -84,19 +84,24 @@ namespace Snake
 			Point head = GetNextPoint();
             if (head.IsHit(boost))
             {
-                Console.ReadLine();
                 boost.sym = head.sym;
 				return true;
             }
             else
-				return false;
-            
-            
-
+				return false;   
         }
-		//public void TimerCallback(object snake)
-		//{
+		public bool Eat3(Point debuf)
+		{
+			Point head = GetNextPoint();
+			if (head.IsHit(debuf))
+			{
+				debuf.sym = head.sym;
+				return true;
+			}
+			else
+				return false;
+		}
 
-		//}
+		
 	}
 }
